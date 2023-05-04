@@ -1,6 +1,7 @@
 import React from 'react'
 import {HiArrowNarrowRight} from "react-icons/hi"
 import TypeWritter from "typewriter-effect"
+import { Link } from 'react-scroll'
 
 const Home = () => {
   return (
