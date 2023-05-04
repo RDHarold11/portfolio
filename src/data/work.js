@@ -4,6 +4,7 @@ import p3 from "../assets/projects/p3.png";
 import p4 from "../assets/projects/p4.png";
 import p5 from "../assets/projects/p5.png";
 import p7 from "../assets/projects/p7.png";
+import api from "../assets/projects/api.png";
 
 const data = [
   {
@@ -53,6 +54,14 @@ const data = [
     linkDemo: "",
     linkCode: "https://github.com/RDHarold11/MovieAPI",
     category: "React",
+  },
+  {
+    id: 6,
+    img: api,
+    title: "Api Node + MySQL",
+    linkDemo: "https://github.com/RDHarold11/mysql-express-api",
+    linkCode: "https://github.com/RDHarold11/mysql-express-api",
+    category: "Api",
   },
 ];
 
