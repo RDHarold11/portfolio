@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 
-import logo from "../assets/logo1.png";
+import logo from "../assets/flogo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="fixed text-gray-300 w-full h-[80px] items-center px-4 bg-[#0a192f]">
       <div className="flex justify-between items-center max-w-[1300px] mx-auto py-4">
         <div>
-          <img src={logo} alt="logo" style={{ width: "50px" }} />
+          <img src={logo} alt="logo" style={{ width: "110px" }} />
         </div>
         <ul className="hidden md:flex">
           <li className="font-bold"><Link to="home" smooth={true} duration={500}>Home</Link></li>
