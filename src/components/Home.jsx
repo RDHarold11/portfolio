@@ -10,7 +10,7 @@ const Home = () => {
             <p className='text-pink-600 font-bold'>Hi, my name is</p>
             <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>Harold Aquino</h1>
             <h2 className='text-4xl sm:text-7xl font-bold text-[#8892b0]'><TypeWritter onInit={(type) => {
-              type.typeString("Welcome.").pauseFor(1000).deleteAll().typeString("I'm a Software Developer.").start()
+              type.typeString("Bienvenido.").pauseFor(1000).deleteAll().typeString("Soy un estudiante de Desarrollo de Sofware.").start()
               }} options={{
                 loop: true
               }}></TypeWritter></h2>
