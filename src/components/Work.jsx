@@ -19,7 +19,7 @@ const Work = () => {
   return (
     <section
       name="work"
-      className="w-full md:h-screen pb-10 text-gray-300 bg-[#0a192f]"
+      className="w-full md:h-screen text-gray-300 bg-[#0a192f]"
     >
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -41,7 +41,6 @@ const Work = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {data.map((item, index) => {
             const { id, img, title, linkDemo, linkCode } = item;
-            console.log(img);
             return (
               <div
                 key={index}
