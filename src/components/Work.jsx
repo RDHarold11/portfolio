@@ -1,20 +1,36 @@
-import React, { useState } from "react";
-import work from "../data/work.js";
-
-const allCategories = ["All", ...new Set(work.map((item) => item.category))];
+import React, { useEffect, useState } from "react";
+import Button from "./Button";
 
 const Work = () => {
-  const [data, setData] = useState(work);
-  const [category, setCategory] = useState(allCategories);
+  const [data, setData] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const fetchData = async () => {
+    const res = await fetch(
+      "https://portfolio-api-production-01b4.up.railway.app/projects"
+    );
+    const dataRes = await res.json();
+    setData(dataRes);
+  };
 
   const handleFilter = (cat) => {
     if (cat === "All") {
-      setData(work);
+      fetchData();
       return;
     }
     const newItem = data.filter((item) => item.category === cat);
     setData(newItem);
   };
+  /* const filtrarData = () => {
+    const allCategories = [
+      "All",
+      ...new Set(data.map((item) => item.category)),
+    ];
+    setCategories(allCategories);
+  }; */
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <section
@@ -27,15 +43,10 @@ const Work = () => {
             Work
           </p>
           <p className="py-6 font-bold">You can see all my projects below.</p>
-          {category.map((item, index) => (
-            <button
-              className="'text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-5 py-3 mr-3 mx-auto "
-              key={index}
-              onClick={() => handleFilter(item)}
-            >
-              {item}
-            </button>
-          ))}
+          <Button handleFilter={handleFilter} category="All"></Button>
+          <Button handleFilter={handleFilter} category="React"></Button>
+          <Button handleFilter={handleFilter} category="Html"></Button>
+          <Button handleFilter={handleFilter} category="Api"></Button>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -48,7 +59,7 @@ const Work = () => {
                 className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
               >
                 <div className="opacity-0 group-hover:opacity-100">
-                  <span className="text-2xl font-bold text-white tracking-wider">
+                  <span className="text-2xl flex items-center justify-center font-bold text-white tracking-wider text-center">
                     {title}
                   </span>
                   <div className="pt-8 text-center">
