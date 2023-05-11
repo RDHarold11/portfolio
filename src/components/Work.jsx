@@ -47,6 +47,7 @@ const Work = () => {
           <Button handleFilter={handleFilter} category="React"></Button>
           <Button handleFilter={handleFilter} category="Html"></Button>
           <Button handleFilter={handleFilter} category="Api"></Button>
+          <Button handleFilter={handleFilter} category="Mern"></Button>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
