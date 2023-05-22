@@ -6,7 +6,7 @@ const Work = () => {
   const [categories, setCategories] = useState([]);
   const fetchData = async () => {
     const res = await fetch(
-      "https://portfolio-api-production-01b4.up.railway.app/projects"
+      "https://portfolio-api-ezns.onrender.com/projects"
     );
     const dataRes = await res.json();
     setData(dataRes);
