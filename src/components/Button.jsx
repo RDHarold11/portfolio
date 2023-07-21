@@ -1,10 +1,9 @@
-import React from "react";
 
-const Button = ({ category, handleFilter }) => {
+const Button = ({ category, setCategory }) => {
   return (
     <button
-      className="'text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-5 py-3 mr-3 mx-auto "
-      onClick={() => handleFilter(category)}
+      className="'text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-5 py-3 mr-3 mx-auto rounded "
+      onClick={() => setCategory(category)}
     >
       {category}
     </button>

@@ -12,17 +12,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed text-gray-300 w-full h-[80px] items-center px-4 bg-[#0a192f]">
+    <div className="fixed text-gray-300 w-full h-[125px] items-center px-4 bg-[#0a192f] z-10 shadow-lg">
       <div className="flex justify-between items-center max-w-[1300px] mx-auto py-4">
         <div>
           <img src={logo} alt="logo" style={{ width: "110px" }} />
         </div>
         <ul className="hidden md:flex">
-          <li className="font-bold"><Link to="home" smooth={true} duration={500}>Home</Link></li>
-          <li className="font-bold"><Link to="about" smooth={true} duration={500}>About</Link></li>
-          <li className=" font-bold"><Link to="skills" smooth={true} duration={500}>Skills</Link></li>
-          <li className=" font-bold"><Link to="work" smooth={true} duration={500}>Work</Link></li>
-          <li className="font-bold"><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
+          <li className="font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="home" smooth={true} duration={500}>Home</Link></li>
+          <li className="font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="about" smooth={true} duration={500}>About</Link></li>
+          <li className=" font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="skills" smooth={true} duration={500}>Skills</Link></li>
+          <li className=" font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="work" smooth={true} duration={500}>Work</Link></li>
+          <li className="font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
         </ul>
         {/* Menu hamburguesa */}
         <div className="z-20 md:hidden flex" onClick={handleClick}>
