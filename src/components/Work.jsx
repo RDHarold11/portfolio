@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { Tilt } from "react-tilt";
+import { defaultOptions } from "../options";
 
 import Button from "./Button";
 import Loading from "./Loading";
@@ -33,10 +35,7 @@ const Work = () => {
   }
 
   return (
-    <section
-      name="work"
-      className="w-full py-[40px] md:h-screen mx-auto text-gray-300"
-    >
+    <section name="work" className="w-full py-[40px]  mx-auto text-gray-300">
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-600">
@@ -48,8 +47,8 @@ const Work = () => {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <Fade cascade direction="right">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+          <Fade direction="right">
             {filteredData?.map((item) => {
               const { _id, img, title, linkDemo, linkCode } = item;
               return (

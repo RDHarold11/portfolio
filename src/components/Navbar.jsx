@@ -12,10 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed text-gray-300 w-full h-[125px] items-center px-4 bg-[#0a192f] z-10 shadow-lg">
+    <div className="fixed text-gray-300 w-full h-[100px] items-center px-4 bg-[#0a192f] z-10 shadow-lg">
       <div className="flex justify-between items-center max-w-[1300px] mx-auto py-4">
         <div>
-          <img src={logo} alt="logo" style={{ width: "110px" }} />
+          <img src={logo} alt="logo" style={{ width: "80px" }} />
         </div>
         <ul className="hidden md:flex">
           <li className="font-bold hover:bg-[#d82777] px-3 py-2 rounded"><Link to="home" smooth={true} duration={500}>Home</Link></li>

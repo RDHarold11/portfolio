@@ -18,7 +18,7 @@ const About = () => {
               <p>Hi. I'm Harold Aquino. I'm a Software Developer student.</p>
             </div>
             <div>
-              <p>
+              <p className="text-left">
                 I am passionate guy who loves to make websites. After a long
                 time studying Frontend, I'm currently studying everything about
                 the Backend Developer. My main goal is building Full Stack Web
