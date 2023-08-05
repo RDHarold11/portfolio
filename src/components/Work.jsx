@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import { Tilt } from "react-tilt";
 import { defaultOptions } from "../options";
 
 import Button from "./Button";
@@ -25,7 +24,7 @@ const Work = () => {
           return item.category.toLowerCase().includes(category.toLowerCase());
         })
       : data;
-
+      
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,46 +34,63 @@ const Work = () => {
   }
 
   return (
-    <section name="work" className="w-full py-[40px]  mx-auto text-gray-300">
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full">
-        <div className="pb-8">
+    <section
+      name="work"
+      className="w-full py-[40px]  mx-auto text-gray-300 fondo"
+    >
+      <div className="max-w-[950px] mx-auto p-4 flex flex-col items-center justify-center w-full">
+        <div className="pb-8 text-center">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-600">
             Work
           </p>
-          <p className="py-6 font-bold">You can see all my projects below.</p>
+          <p className="py-6 font-bold ">You can see all my projects below.</p>
           {categories.map((item, index) => (
             <Button key={index} category={item} setCategory={setCategory} />
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4 ">
           <Fade direction="right">
             {filteredData?.map((item) => {
-              const { _id, img, title, linkDemo, linkCode } = item;
+              const {
+                _id,
+                img,
+                title,
+                linkDemo,
+                linkCode,
+                category,
+                color,
+                description,
+              } = item;
               return (
-                <div
+                <article
                   key={_id}
-                  style={{ backgroundImage: `url(${img})` }}
-                  className="shadow-lg shadow-[#040c16] group container  rounded-md flex justify-center items-center mx-auto content-div"
+                  className="rounded h-full top"
+                  style={{ backgroundColor: `#${color}` }}
                 >
-                  <div className="opacity-0 group-hover:opacity-100">
-                    <span className="text-2xl flex items-center justify-center font-bold text-white tracking-wider text-center">
-                      {title}
-                    </span>
-                    <div className="pt-8 text-center">
-                      <a href={linkDemo}>
-                        <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                          {linkDemo ? "Demo" : ""}
-                        </button>
-                      </a>
-                      <a href={linkCode}>
-                        <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                          Code
-                        </button>
-                      </a>
+                  <main className="px-5">
+                    <div className="pb-[43px] pt-2">
+                      <h4 className="font-bold mt-2 ">{category}</h4>
+                      <h2 className="capitalize font-bold text-3xl my-1">
+                        {title}
+                      </h2>
+                      <div>
+                        <p>{description}</p>
+                      </div>
                     </div>
+                    <div className="">
+                      <img src={img} alt="" className="w-full h-full m-0" />
+                    </div>
+                  </main>
+                  <div className="details flex items-center justify-center">
+                    <button className="text-white mr-2 rounded bg-[#B799FF] px-5 py-3">
+                      <a href={linkDemo}>Demo</a>
+                    </button>
+                    <button className="text-gray-950 rounded bg-[#fff] px-5 py-3">
+                      <a href={linkCode}>Code</a>
+                    </button>
                   </div>
-                </div>
+                </article>
               );
             })}
           </Fade>

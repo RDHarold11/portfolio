@@ -5,12 +5,18 @@ import {
   AiFillTwitterCircle,
   AiFillInstagram,
 } from "react-icons/ai";
+import { toast} from "react-toastify"
+import pdf from "/public/CV.pdf";
+import { BsFileEarmarkPdf } from "react-icons/bs";
 import { Link } from "react-scroll";
 import TypeWritter from "typewriter-effect";
 
 const Home = () => {
   return (
-    <main name="home" className="w-full pt-5 h-screen bg-[#0a192f]">
+    <main
+      name="home"
+      className="w-full pt-[70px] md:pt-5 h-screen bg-[#0a192f]"
+    >
       <div className="max-w-[1000px] mx-auto flex flex-col justify-center h-full px-4">
         <Fade direction="left">
           <p className="text-pink-600 font-bold text-xl">Hi, my name is</p>
@@ -34,12 +40,25 @@ const Home = () => {
             applications in a near future.
           </p>
           <div className="">
-            <button className="text-white border-2 px-6 py-3 my-2 flex gap-2 hover:bg-pink-600 hover:border-pink-600">
-              <Link to="work" smooth={true} duration={500}>
-                View Work
-              </Link>
-              <HiArrowNarrowRight size={25} />{" "}
-            </button>
+            <div className="flex gap-3">
+              <button className="text-white border-2 px-6 py-3 my-2 flex gap-2 hover:bg-pink-600 hover:border-pink-600">
+                <Link to="work" smooth={true} duration={500}>
+                  View Work
+                </Link>
+                <HiArrowNarrowRight size={25} />{" "}
+              </button>
+              <a
+                href={pdf}
+                className=" text-white border-2 px-6 py-3 my-2 flex gap-2 hover:bg-pink-600 hover:border-pink-600"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Harold Aquino CV.pdf"
+                onClick={() => toast("CV Downloaded")}
+              >
+                Download CV
+                <BsFileEarmarkPdf size={25} />
+              </a>
+            </div>
             {/* Links */}
             <div className="flex items-center gap-3 mt-4">
               <div className="bg-[#db2777] px-3 py-2 rounded">

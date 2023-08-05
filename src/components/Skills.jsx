@@ -1,15 +1,7 @@
 import React from "react";
-
-import HTML from "../assets/html.png";
-import CSS from "../assets/css.png";
-import JavaScript from "../assets/javascript.png";
-import ReactImg from "../assets/react.png";
-import Tailwind from "../assets/tailwind.png";
-import Node from "../assets/node.png";
-import Sql from "../assets/sql.svg";
-import Git from "../assets/git.svg";
 import { Fade } from "react-awesome-reveal";
 
+import skills from "../data/skills";
 //Me falta SQL
 
 const Skills = () => {
@@ -28,50 +20,31 @@ const Skills = () => {
               These are the technologies I'm currently working with
             </p>
           </div>
-
           <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-5   text-center py-8">
-            <Fade cascade damping={0.1}>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={HTML} alt="html img" />
-                <p className="my-4">HTML</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={CSS} alt="html img" />
-                <p className="my-4">CSS</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={JavaScript} alt="html img" />
-                <p className="my-4">JavaScript</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={ReactImg} alt="html img" />
-                <p className="my-4">React</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={Tailwind} alt="html img" />
-                <p className="my-4">Tailwind</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img className="w-20 mx-auto" src={Git} alt="html img" />
-                <p className="my-4">Git</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img
-                  className="w-20 mx-auto bg-[#fff]"
-                  src={Sql}
-                  alt="html img"
-                />
-                <p className="my-4">SQL</p>
-              </div>
-              <div className="shadow-md shadow-[#0f2648] hover:scale-110 duration-500 py-2">
-                <img
-                  className="w-20 mx-auto bg-[#fff]"
-                  src={Node}
-                  alt="html img"
-                />
-                <p className="my-4">Node Js</p>
-              </div>
-            </Fade>
+            {skills.map((skill, index) => {
+              const { id, title, description, img } = skill;
+              return (
+                <article
+                  className="flex flex-col gap-3 rounded items-center justify-center hover:bg-[#526D82] hover:scale-110 duration-400 hover:text-gray-100 ease-in transition-all"
+                  key={id}
+                >
+                  <header className="border-b-2">
+                    <h2 className="font-bold mb-1">{id}</h2>
+                  </header>
+                  <main className="flex flex-col gap-1 items-center justify-center">
+                    <div>
+                      <img
+                        className="max-w-[45px] hover:animate-spin"
+                        src={img}
+                        alt=""
+                      />
+                    </div>
+                    <h4 className="uppercase font-bold">{title}</h4>
+                    <p className="text-gray-400">{description}</p>
+                  </main>
+                </article>
+              );
+            })}
           </div>
         </Fade>
       </div>

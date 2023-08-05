@@ -10,6 +10,12 @@
     @apply cursor-pointer;
   }
 }
+img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
 
 ::selection {
   background-color: #d82777;
@@ -31,4 +37,24 @@ body {
     rgba(112, 157, 255, 0.8),
     hsla(242, 74%, 61%, 0.8)
   ) !important;
+}
+.top {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  background-color: #333;
+  top: 0;
+  height: 0%;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.top:hover .details {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
 }
